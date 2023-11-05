@@ -34,7 +34,8 @@ instruction_text = st.text_input("**Refine** the instruction", instruction)
 context_text = st.text_area("**Enter** the text you would like to process using the prompt in the box")
 st.write("Press **Let\'s Go** button to proceed")
 if st.button('Let\'s Go!'):
-  st.write("You pressed the button!")
+  
+  start = time.time()
   
   url = "https://api.perplexity.ai/chat/completions"
   
@@ -60,11 +61,17 @@ if st.button('Let\'s Go!'):
   
   response = requests.post(url, json=payload, headers=headers)
   data = json.loads(response.text)
+
+  end = time.time()
+  
   if data.get('error') == None:
+    answer = data['choices'][0]['message']['content']
+    st.write(answer)
     st.write("Model:", data['model'])
     st.write("Prompt Tokens:", data['usage']['prompt_tokens'])
     st.write("Completion Tokens:", data['usage']['completion_tokens'])
     st.write("Total Tokens:", data['usage']['total_tokens'])
-    answer = data['choices'][0]['message']['content']
+    st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
+    st.divider()
   else:
     st.write(data['error']['message'])
