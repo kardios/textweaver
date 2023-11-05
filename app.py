@@ -13,7 +13,7 @@ model_id = "mistral-7b-instruct"
 
 # Create a Streamlit interface header
 st.write("**TextWeaver** :scroll: :lower_left_ballpoint_pen: :computer: AI-Powered Writing Experiment by **Sherwood Analytica**")
-st.write(":red[You may get unsuitable or incorrect answers and should take full responsibility over how you use the output.]")
+st.write("**:red[May produce unsuitable or incorrect answers. You bear full responsibility over how you use the output.]**")
 input_text = st.text_area("**Enter** the text you would like to process using the prompt in the box below and press the **Let\'s Go** button to proceed.")
 
 if st.button('Let\'s Go!'):
