@@ -51,8 +51,7 @@ if st.button('Let\'s Go!'):
     ], 
     "temperature": temperature
   }
-  headers = 
-  {
+  headers = {
     "accept": "application/json",
     "content-type": "application/json",
     "authorization": "Bearer " + API_KEY
@@ -60,3 +59,4 @@ if st.button('Let\'s Go!'):
   
   response = requests.post(url, json=payload, headers=headers)
   st.write(response.text)
+  
