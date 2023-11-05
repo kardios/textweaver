@@ -65,6 +65,7 @@ if st.button('Let\'s Go!'):
   end = time.time()
   
   if data.get('error') == None:
+    st.divider()
     st.write("**Answer**")
     answer = data['choices'][0]['message']['content']
     st.write(answer)
@@ -74,5 +75,6 @@ if st.button('Let\'s Go!'):
     st.write("Completion Tokens:", data['usage']['completion_tokens'])
     st.write("Total Tokens:", data['usage']['total_tokens'])
     st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
+    st.divider()
   else:
     st.write(data['error']['message'])
