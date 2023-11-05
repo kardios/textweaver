@@ -12,7 +12,7 @@ temperature = 0
 model_id = "mistral-7b-instruct"
 
 # Create a Streamlit interface header
-st.write("**TextWeaver** :scroll: :lower_left_ballpoint_pen: :computer: AI-Powered Writing Experiment by **Sherwood Analytica**")
+st.write("**TextWeaver** :lower_left_ballpoint_pen: :computer: :scroll: AI-Powered Writing Experiment by **Sherwood Analytica**")
 st.write("**:red[May produce unsuitable or incorrect answers. You bear full responsibility over how you use the output.]**")
 
 choose_instruction = st.selectbox("Choose an instruction", ('Summarize', 'Main Points', 'Alternative', 'Improvement', 'Customise'))
