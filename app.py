@@ -32,7 +32,7 @@ elif choose_instruction  == 'Customise':
 
 instruction_text = st.text_input("**Refine** the instruction", instruction)
 context_text = st.text_area("**Enter** the text you would like to process using the prompt in the box")
-st.write("Press **Let\'s Go** button to proceed")
+st.write("**Press** button to proceed")
 if st.button('Let\'s Go!'):
   
   start = time.time()
