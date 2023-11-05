@@ -34,3 +34,29 @@ context_text = st.text_area("**Enter** the text you would like to process using 
 
 if st.button('Let\'s Go!'):
   st.write("You pressed the button!")
+  
+  url = "https://api.perplexity.ai/chat/completions"
+  
+  payload = {
+    "model": model_id,
+    "messages": [
+      {
+        "role": "system", 
+        "content": "Be precise and concise."
+      }, 
+      {
+        "role": "user",
+        "content": instruction_text + "\n\n" + context_text
+      }
+    ], 
+    "temperature": temperature
+  }
+  headers = 
+  {
+    "accept": "application/json",
+    "content-type": "application/json",
+    "authorization": "Bearer " + API_KEY
+  }
+  
+  response = requests.post(url, json=payload, headers=headers)
+  st.write(response.text)
