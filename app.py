@@ -10,7 +10,7 @@ API_KEY = os.environ["PERPLEXITY_AI_PRO_KEY"]
 
 # Set the initial temperature and model ID
 temperature = 0
-model_id = "mistral-7b-instruct"
+model_id = "llama-2-70b-chat"
 
 # Create a Streamlit interface header
 st.write("**TextWeaver** :lower_left_ballpoint_pen: :computer: :scroll: AI-Powered Writing Experiment by **Sherwood Analytica**")
