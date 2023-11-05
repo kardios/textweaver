@@ -69,7 +69,7 @@ if st.button('Let\'s Go!'):
     st.divider()
     st.write("**Answer**")
     answer = data['choices'][0]['message']['content']
-    st.write(answer)
+    st.markdown(answer)
     st.divider()
     st.write("Model:", data['model'])
     st.write("Prompt Tokens:", data['usage']['prompt_tokens'])
