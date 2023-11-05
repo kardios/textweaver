@@ -3,6 +3,7 @@ import streamlit as st
 import os
 import requests
 import time
+import json
 
 # Retrieve the Perplexity AI Pro API key from the environment variable
 API_KEY = os.environ["PERPLEXITY_AI_PRO_KEY"]
@@ -58,5 +59,12 @@ if st.button('Let\'s Go!'):
   }
   
   response = requests.post(url, json=payload, headers=headers)
-  st.write(response.text)
-  
+  data = json.loads(response.text)
+  if data.get('error') == None:
+    st.write("Model:", data['model'])
+    st.write("Prompt Tokens:", data['usage']['prompt_tokens'])
+    st.write("Completion Tokens:", data['usage']['completion_tokens'])
+    st.write("Total Tokens:", data['usage']['total_tokens'])
+    answer = data['choices'][0]['message']['content']
+  else:
+    st.write(data['error']['message'])
