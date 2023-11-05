@@ -16,7 +16,7 @@ model_id = "llama-2-70b-chat"
 st.write("**TextWeaver** :lower_left_ballpoint_pen: :computer: :scroll: AI-Powered Writing Experiment by **Sherwood Analytica**")
 st.write("**:red[May produce unsuitable or incorrect answers. You bear full responsibility over how you use the output.]**")
 
-choose_instruction = st.selectbox("**Choose** an instruction", ('Summarize', 'Bias Check', 'Contrarian', 'Alternative', 'Reflection', 'Improvement', 'Customise'))
+choose_instruction = st.selectbox("**Choose** an instruction", ('Summarize', 'Bias Check', 'Contrarian', 'Alternative', 'Reflection', 'Customise'))
 
 instruction = ''
 if choose_instruction  == 'Summarize':
@@ -29,8 +29,6 @@ elif choose_instruction == 'Alternative':
   instruction = "Read the text below and highlight any missing or incomplete angles."
 elif choose_instruction == 'Reflection':
   instruction = "Read the text below and draw similiarities and differences to historical events in the last century."
-elif choose_instruction  == 'Improvement':
-  instruction = "Read the text below and suggest critical areas for improvement."
 elif choose_instruction  == 'Customise':
   instruction = "Read the text below and propose follow-up actions."
 
