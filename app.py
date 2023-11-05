@@ -30,8 +30,8 @@ elif choose_instruction  == 'Customise':
   instruction = "Read the text below and propose follow-up actions."
 
 instruction_text = st.text_input("**Refine** the instruction", instruction)
-context_text = st.text_area("**Enter** the text you would like to process using the prompt in the box below and press the **Let\'s Go** button to proceed.")
-
+context_text = st.text_area("**Enter** the text you would like to process using the prompt in the box")
+st.write("Press **Let\'s Go** button to proceed")
 if st.button('Let\'s Go!'):
   st.write("You pressed the button!")
   
