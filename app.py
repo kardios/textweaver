@@ -16,7 +16,7 @@ model_id = "mistral-7b-instruct"
 st.write("**TextWeaver** :lower_left_ballpoint_pen: :computer: :scroll: AI-Powered Writing Experiment by **Sherwood Analytica**")
 st.write("**:red[May produce unsuitable or incorrect answers. You bear full responsibility over how you use the output.]**")
 
-choose_instruction = st.selectbox("Choose an instruction", ('Summarize', 'Main Points', 'Alternative', 'Improvement', 'Customise'))
+choose_instruction = st.selectbox("**Choose** an instruction", ('Summarize', 'Main Points', 'Alternative', 'Improvement', 'Customise'))
 
 instruction = ''
 if choose_instruction  == 'Summarize':
@@ -65,13 +65,14 @@ if st.button('Let\'s Go!'):
   end = time.time()
   
   if data.get('error') == None:
+    st.write("**Answer**)
     answer = data['choices'][0]['message']['content']
     st.write(answer)
+    st.divider()
     st.write("Model:", data['model'])
     st.write("Prompt Tokens:", data['usage']['prompt_tokens'])
     st.write("Completion Tokens:", data['usage']['completion_tokens'])
     st.write("Total Tokens:", data['usage']['total_tokens'])
     st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
-    st.divider()
   else:
     st.write(data['error']['message'])
