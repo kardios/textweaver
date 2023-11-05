@@ -13,7 +13,7 @@ temperature = 0
 model_id = "llama-2-70b-chat"
 
 # Create a Streamlit interface header
-st.write("**TextWeaver** :lower_left_ballpoint_pen: :computer: :memo: AI-Powered Writing Experiment by **Sherwood Analytica**")
+st.write("**TextWeaver** :memo: AI-Powered Writing Experiment :memo: **Sherwood Analytica**")
 st.write("**:red[May produce unsuitable or incorrect answers. You bear full responsibility over how you use the output.]**")
 
 choose_instruction = st.selectbox("**Choose** an instruction", ('Summarize', 'Bias Check', 'Contrarian', 'Alternative', 'Reflection', 'Customise'))
