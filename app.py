@@ -65,7 +65,7 @@ if st.button('Let\'s Go!'):
   end = time.time()
   
   if data.get('error') == None:
-    st.write("**Answer**)
+    st.write("**Answer**")
     answer = data['choices'][0]['message']['content']
     st.write(answer)
     st.divider()
