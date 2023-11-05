@@ -16,13 +16,11 @@ model_id = "llama-2-70b-chat"
 st.write("**TextWeaver** :lower_left_ballpoint_pen: :computer: :scroll: AI-Powered Writing Experiment by **Sherwood Analytica**")
 st.write("**:red[May produce unsuitable or incorrect answers. You bear full responsibility over how you use the output.]**")
 
-choose_instruction = st.selectbox("**Choose** an instruction", ('Summarize', 'Main Points', 'Alternative', 'Improvement', 'Customise'))
+choose_instruction = st.selectbox("**Choose** an instruction", ('Summarize', 'Alternative', 'Improvement', 'Customise'))
 
 instruction = ''
 if choose_instruction  == 'Summarize':
   instruction = "Read the text below and produce an informative and coherent summary. Include the main ideas and key details from the text. Think step by step."
-elif choose_instruction  == 'Main Points':
-  instruction = "Read the text below and summarize the main ideas and key details into bullet points. Recognize the overall structure of the text and create bullet points that reflect this structure. The output should be presented in a clear and organized way. Do not start with any titles."
 elif choose_instruction  == 'Alternative':
   instruction = "Read the text below and highlight any missing or incomplete angles."
 elif choose_instruction  == 'Improvement':
@@ -65,17 +63,14 @@ if st.button('Let\'s Go!'):
   end = time.time()
   
   if data.get('error') == None:
-    st.write(response.text)
-    st.divider()
     st.write("**Answer**")
     answer = data['choices'][0]['message']['content']
-    st.write(answer.replace("\n"," \n "))
+    st.write(answer)
     st.divider()
     st.write("Model:", data['model'])
     st.write("Prompt Tokens:", data['usage']['prompt_tokens'])
     st.write("Completion Tokens:", data['usage']['completion_tokens'])
     st.write("Total Tokens:", data['usage']['total_tokens'])
     st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
-    st.divider()
   else:
     st.write(data['error']['message'])
