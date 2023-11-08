@@ -1,5 +1,6 @@
 # Import necessary libraries
 import streamlit as st
+import openai
 import os
 import requests
 import time
