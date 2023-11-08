@@ -1,15 +1,12 @@
 # Import necessary libraries
 import streamlit as st
-import openai
 import os
 import requests
 import time
 import json
 
 # Retrieve the Perplexity AI Pro API key from the environment variable
-API_KEY1 = os.environ["PERPLEXITY_AI_PRO_KEY"]
-API_KEY2 = os.environ["OPENAI_KEY"]
-openai.api_key = API_KEY2
+API_KEY = os.environ["PERPLEXITY_AI_PRO_KEY"]
 
 # Define a function to interact with the LLM for conversation
 def chatgpt_conversation(conversation_log):
@@ -74,7 +71,7 @@ if st.button('Let\'s Go with **Llama-2**'):
   headers = {
     "accept": "application/json",
     "content-type": "application/json",
-    "authorization": "Bearer " + API_KEY1
+    "authorization": "Bearer " + API_KEY
   }
   
   response = requests.post(url, json=payload, headers=headers)
@@ -94,16 +91,3 @@ if st.button('Let\'s Go with **Llama-2**'):
     st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
   else:
     st.write(data['error']['message'])
-
-if st.button('Let\'s Go with **OpenAI**'):
-  start = time.time()
-  conversations = []
-  conversations.append({'role': 'system', 'content': "Be precise and concise."})
-  conversations.append({'role': 'user', 'content': instruction_text + "\n\n" + context_text})
-  conversations = chatgpt_conversation(conversations)
-  answer = conversations[-1]['content']
-  st.write("**Answer**")
-  st.write(answer)
-  end = time.time()
-  st.write("Time to generate: " + str(round(end-start,2)) + " seconds")
-  st.divider()
