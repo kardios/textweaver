@@ -95,8 +95,6 @@ if st.button('Let\'s Go with **Llama-2**'):
   else:
     st.write(data['error']['message'])
 
-model_id = st.radio("Select Model:", ('llama-2-70b-chat','gpt-4-1106-preview'))
-
 if st.button('Let\'s Go with **OpenAI**'):
   start = time.time()
   conversations = []
