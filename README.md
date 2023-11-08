@@ -1,2 +1,2 @@
 # textweaver
-Prototype Gen AI Tool
+AI-Powered Writing Experiment by Sherwood Analytica
