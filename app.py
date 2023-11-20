@@ -34,14 +34,14 @@ elif choose_instruction  == 'Generate question-answer pairs':
 elif choose_instruction  == 'Customise your own unique prompt':
   instruction = "Propose follow-up actions."
 
-instruction = "Read the INPUT below. " + instruction + "\n\nINPUT:"
-
 instruction_text = st.text_input("**Refine** the instruction", instruction)
 context_text = st.text_area("**Enter** the text to process using the above instruction")
 st.write("**Press** button to proceed")
 if st.button('Let\'s Go with **Llama-2**'):
   
   start = time.time()
+
+  instruction = "Read the INPUT below. " + instruction + "\n\nINPUT:"
   
   url = "https://api.perplexity.ai/chat/completions"
   
