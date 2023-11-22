@@ -14,7 +14,7 @@ st.write("**:red[May produce unsuitable or incorrect answers. You bear full resp
 
 # Set the initial temperature and model ID
 temperature = 0
-model_id = "openhermes-2.5-mistral-7b"
+model_id = "pplx-70b-chat-alpha"
 
 choose_instruction = st.selectbox("**Choose** an instruction", ('Condense the text into bullet points', 'Shorten the text into a summary', 'Identify possible biases in the text', 'Seek views disagreeing with the text', 'Find angles missing from the text', 'Compare the text with historical events', 'Generate question-answer pairs', 'Customise your own unique prompt'))
 
