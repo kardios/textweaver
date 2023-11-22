@@ -16,10 +16,12 @@ st.write("**:red[May produce unsuitable or incorrect answers. You bear full resp
 temperature = 0
 model_id = "llama-2-70b-chat"
 
-choose_instruction = st.selectbox("**Choose** an instruction", ('Shorten the text into a summary', 'Identify possible biases in the text', 'Seek views disagreeing with the text', 'Find angles missing from the text', 'Compare the text with historical events', 'Generate question-answer pairs', 'Customise your own unique prompt'))
+choose_instruction = st.selectbox("**Choose** an instruction", ('Condense the text into bullet points', 'Shorten the text into a summary', 'Identify possible biases in the text', 'Seek views disagreeing with the text', 'Find angles missing from the text', 'Compare the text with historical events', 'Generate question-answer pairs', 'Customise your own unique prompt'))
 
 instruction = ''
-if choose_instruction  == 'Shorten the text into a summary':
+if choose_instruction == 'Condense the text into bullet points':
+  instruction = "Summarise into bullet points. Identify the main ideas and key details in the text, and condense them into concise bullet points. Recognize the overall structure of the text and create bullet points that reflect this structure. The output should be presented in a clear and organized way. Do not start with any titles."
+elif choose_instruction  == 'Shorten the text into a summary':
   instruction = "Produce an informative and coherent summary. Include the main ideas and key details from the text."
 elif choose_instruction == 'Identify possible biases in the text':
   instruction = "Highlight possible biases in the text."
