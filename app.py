@@ -14,7 +14,7 @@ st.write("**:red[May produce unsuitable or incorrect answers. You bear full resp
 
 # Set the initial temperature and model ID
 temperature = 0
-model_id = "llama-2-70b-chat"
+model_id = "openhermes-2.5-mistral-7b"
 
 choose_instruction = st.selectbox("**Choose** an instruction", ('Condense the text into bullet points', 'Shorten the text into a summary', 'Identify possible biases in the text', 'Seek views disagreeing with the text', 'Find angles missing from the text', 'Compare the text with historical events', 'Generate question-answer pairs', 'Customise your own unique prompt'))
 
@@ -39,7 +39,7 @@ elif choose_instruction  == 'Customise your own unique prompt':
 instruction_text = st.text_input("**Refine** the instruction", instruction)
 context_text = st.text_area("**Enter** the text to process using the above instruction")
 st.write("**Press** button to proceed")
-if st.button('Let\'s Go with **Llama-2**'):
+if st.button(':rocket:'):
   start = time.time()
   
   instruction = "Read the INPUT below. " + instruction + "\n\nINPUT:"
