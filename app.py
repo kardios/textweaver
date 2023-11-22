@@ -38,7 +38,9 @@ elif choose_instruction  == 'Customise your own unique prompt':
 
 instruction_text = st.text_input("**Refine** the instruction", instruction)
 context_text = st.text_area("**Enter** the text to process using the above instruction")
+
 st.write("**Press** button to proceed")
+
 if st.button(':rocket:'):
   start = time.time()
   
